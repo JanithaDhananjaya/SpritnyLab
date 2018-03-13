@@ -22,7 +22,7 @@
             print_controls = $('<div id="print-modal-controls">' + 
                                     '<a href="#" class="print" title="Print page">Print page</a>' +
                                     '<a href="#" class="close" title="Close print preview">Close</a>').hide();
-            var print_frame = $('<iframe id="print-modal-content" scrolling="no" border="0" frameborder="0" name="print-frame" />');
+            var print_frame = $('<iframe id="print-modal-content" scrolling="yes" border="0" frameborder="0" name="print-frame" />');
 
             // Raise print preview window from the dead, zooooooombies
             print_modal
@@ -128,37 +128,37 @@
 	    loadMask: function() {
 	        size = $.printPreview.sizeUpMask();
             mask = $('<div id="print-modal-mask" />').appendTo($('body'));
-    	    mask.css({				
-    			position:           'absolute', 
-    			top:                0, 
+    	    mask.css({
+    			position:           'absolute',
+    			top:                0,
     			left:               0,
     			width:              size[0],
     			height:             size[1],
     			display:            'none',
-    			opacity:            0,					 		
+    			opacity:            0,
     			zIndex:             9999,
     			backgroundColor:    '#000'
     		});
-	
+
     		mask.css({display: 'block'}).fadeTo('400', 0.75);
-    		
+
             $(window).bind("resize..printPreview.mask", function() {
 				$.printPreview.updateMaskSize();
 			});
-			
+
 			mask.bind("click.printPreview.mask", function(e)  {
 				$.printPreview.distroyPrintPreview();
 			});
-			
+
 			$(document).bind("keydown.printPreview.mask", function(e) {
 			    if (e.keyCode == 27) {  $.printPreview.distroyPrintPreview(); }
 			});
         },
-    
+
         sizeUpMask: function() {
-return [$(document).width(), $(document).height()]; 
+return [$(document).width(), $(document).height()];
         },
-    
+
         updateMaskSize: function() {
     		var size = $.printPreview.sizeUpMask();
     		mask.css({width: size[0], height: size[1]});

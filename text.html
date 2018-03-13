@@ -1,27 +1,41 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <title>JavaScript PDF Viewer Demo</title>
-    <script type="text/javascript" src="JS/jquery-3.2.1.js"></script>
-    <script type="text/javascript">
-        function PreviewImage() {
-            pdffile=document.getElementById("uploadPDF").files[0];
-            pdffile_url=URL.createObjectURL(pdffile);
-            $('#viewer').attr('src',pdffile_url);
-        }
-    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
 </head>
 <style>
-    #viewer{
-
+    body {
+        margin: 0px;
+        padding: 0px;
+        font-family: Helvetica;
+        background: url("image.png");
     }
-</style>
-<body>
-<input id="uploadPDF" type="file" name="myPDF"/>&nbsp;
-<input type="button" value="Preview" onclick="PreviewImage();" />
 
-<div style="clear:both">
-    <iframe id="viewer" frameborder="0" scrolling="no" width="1366" height="1080"></iframe>
+    #output_image {
+        width: 566px;
+        height: 356px;
+        border: 4px solid black;
+    }
+
+</style>
+<script type="text/javascript">
+    function preview_image(event) {
+        var reader = new FileReader();
+        reader.onload=function () {
+            var output=document.getElementById("output_image");
+            output.src=reader.result;
+        }
+        reader.readAsDataURL(event.target.files[0]);
+    }
+</script>
+<body>
+<div>
+    <input type="file" accept="image/*" onchange="preview_image(event)">
+    <img id="output_image"/>
 </div>
 </body>
 </html>

@@ -7,67 +7,107 @@
 <link rel="stylesheet" href="CSS/bootstrap.min.css">
 
 <style>
+
+    #title {
+        border-radius: 25px;
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        margin: 0;
+        display: inline;
+        background-color: #CD853F;
+    }
+
     #right-div {
-        width: 60%;
+        width: 80%;
         height: 630px;
         border: solid black;
     }
-    #preview-div{
-        top:2%;
-        left: 20%;
-        width: 450px;
-        height: 600px;
-        position: relative;
-        border: grey solid;
-    }
+
+    /*#preview-div{*/
+    /*top:2%;*/
+    /*left: 20%;*/
+    /*width: 450px;*/
+    /*height: 600px;*/
+    /*position: relative;*/
+    /*border: grey solid;*/
+    /*}*/
 
     #left-div {
-        width: 40%;
+        width: 20%;
         height: 640px;
     }
 
-    #preview-image {
-        position: relative;
-        width: 395px;
-        height:  542px;
+    /*#preview-image {*/
+    /*position: relative;*/
+    /*width: 395px;*/
+    /*height:  542px;*/
+    /*}*/
+
+    #output_image {
+        width: 666px;
+        height: 456px;
+        margin-left: 20%;
+        margin-top: 5%;
+        border: 3px solid black;
     }
 
 </style>
+<script type="text/javascript">
+    function preview_image(event) {
+        var reader = new FileReader();
+        reader.onload = function () {
+            var output = document.getElementById("output_image");
+            output.src = reader.result;
 
+            height = output.clientHeight;
+            width = output.clientWidth;
+
+            console.log(height);
+            console.log(width);
+
+        }
+        reader.readAsDataURL(event.target.files[0]);
+    }
+</script>
 <body class="w3-content" style="max-width:1300px">
 
 <div class="w3-row">
     <div class="w3-half w3-container" id="left-div">
         <div class="w3-padding-64 ">
-            <h1 id="">Print</h1>
+            <h1 id="title">Print</h1>
         </div>
         <div class="w3-padding-04">
 
             <form action="">
+
+                <div class="form-group">
+                    <input type="file" accept="image/*" onchange="preview_image(event)">
+                </div>
+
                 <div class="form-group">
                     <label for="pages">Pages per Sheet:</label>
-                    <input type="pages" class="form-control" id="pages">
+                    <input type="text"  class="form-control col-sm-4" id="pages">
                 </div>
                 <div class="form-group">
                     <label for="colour">Black & White/Colour:</label>
-                    <input type="colour" class="form-control" id="colour">
+                    <input type="text" class="form-control col-sm-4" id="colour">
                 </div>
                 <div class="form-group">
                     <label for="orientation">Orientation:</label>
-                    <input type="orientation" class="form-control" id="orientation">
+                    <input type="text" class="form-control col-sm-4" id="orientation">
                 </div>
                 <div class="form-group">
                     <label for="pageSize">Page Size</label>
-                    <input type="pageSize" class="form-control" id="pageSize">
+                    <input type="text" class="form-control col-sm-4" id="pageSize">
                 </div>
             </form>
 
         </div>
     </div>
-    <div class="w3-half w3-container" id="right-div">
-        <div class="w3-padding-64 w3-center" id="preview-div">
-            <img src="Images/Coverpage.jpg" id="preview-image" alt="Print-Image">
-        </div>
+    <div class="w3-half w3-container" id="right-div"><br>
+        <img id="output_image"/>
     </div>
 </div>
 

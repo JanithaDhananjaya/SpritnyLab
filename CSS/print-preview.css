@@ -46,8 +46,8 @@
     }
     
     #print-modal-controls a.print {
-        background: url(images/icon-print.png) no-repeat 50% 50%;
+        background: url(Images/icon-print.png) no-repeat 50% 50%;
     }
     #print-modal-controls a.close {
-        background: url(images/icon-close.png) no-repeat 50% 50%;
+        background: url(Images/icon-close.png) no-repeat 50% 50%;
     }

@@ -1,21 +1,67 @@
 <!doctype html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sprinty Lab</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <style>
+        .container{
+            position: absolute;
+            width: 500px;
+            height: 400px;
+            top: 30%;
+            left: 50%;
+            margin: -100px 0 0 -150px;
+            background: #80808061;
+            color: white;
+            border-radius:5px;
+        }
+        .container-header{
+            width: 500px;
+            margin-left: -15px;
+            height: 40px;
+            background: #464646;
+            color:white;
+            padding:5px;
+            font-size:20px;
+            text-align:center;
+            margin-bottom:40px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+        #output{
+            width:100px;
+            height:auto;
+            margin-top:20px;
+        }
+        .btn{
+            margin-top:20px;
+        }
+    </style>
 </head>
-<style>
 
-</style>
 <body>
-<link rel="stylesheet" href="CSS/bootstrap.min.css">
-    <pre>
-
-    </pre>
-<script src="JS/jquery-3.2.1.js"></script>
-<script src="JS/send-parameters.js"></script>
+<div class="container">
+    <div class="container-header">
+        Select image to upload
+    </div>
+    <form action="upload.php" method="post" enctype="multipart/form-data" id="form1" runat="server">
+        <div class="col-md-12">
+            <input type='file' id="imgInp" name="fileToUpload" accept="image/*" onchange="loadFile(event)" class="form-control"/>
+            <img id="output"/>
+        </div>
+        <div class="col-md-12">
+            <input type="submit" value="Upload Image" name="submit" class="btn">
+        </div>
+    </form>
+</div>
 </body>
-</html>
+<script>
+    var loadFile = function (event) {
+        var reader = new FileReader();
+        reader.onload = function () {
+            var output = document.getElementById('output');
+            output.src = reader.result;
+        };
+        reader.readAsDataURL(event.target.files[0]);
+    };
+</script>
+</>
