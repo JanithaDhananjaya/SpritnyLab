@@ -25,52 +25,22 @@
         border: solid black;
     }
 
-    /*#preview-div{*/
-    /*top:2%;*/
-    /*left: 20%;*/
-    /*width: 450px;*/
-    /*height: 600px;*/
-    /*position: relative;*/
-    /*border: grey solid;*/
-    /*}*/
-
     #left-div {
         width: 20%;
         height: 640px;
     }
 
-    /*#preview-image {*/
-    /*position: relative;*/
-    /*width: 395px;*/
-    /*height:  542px;*/
-    /*}*/
-
     #output_image {
-        width: 666px;
-        height: 456px;
-        margin-left: 20%;
-        margin-top: 5%;
+        width: 766px;
+        height: 556px;
+        margin-left: 13%;
+        margin-top: 2%;
         border: 3px solid black;
     }
 
 </style>
-<script type="text/javascript">
-    function preview_image(event) {
-        var reader = new FileReader();
-        reader.onload = function () {
-            var output = document.getElementById("output_image");
-            output.src = reader.result;
-
-            height = output.clientHeight;
-            width = output.clientWidth;
-
-            console.log(height);
-            console.log(width);
-
-        }
-        reader.readAsDataURL(event.target.files[0]);
-    }
-</script>
+<script type="text/javascript" src="JS/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="JS/load-image.js"></script>
 <body class="w3-content" style="max-width:1300px">
 
 <div class="w3-row">
@@ -83,12 +53,12 @@
             <form action="">
 
                 <div class="form-group">
-                    <input type="file" accept="image/*" onchange="preview_image(event)">
+                    <input type="file" accept="image/*" id="blah" onchange="preview_image(event)">
                 </div>
 
                 <div class="form-group">
                     <label for="pages">Pages per Sheet:</label>
-                    <input type="text"  class="form-control col-sm-4" id="pages">
+                    <input type="text" class="form-control col-sm-4" id="pages">
                 </div>
                 <div class="form-group">
                     <label for="colour">Black & White/Colour:</label>
@@ -101,6 +71,9 @@
                 <div class="form-group">
                     <label for="pageSize">Page Size</label>
                     <input type="text" class="form-control col-sm-4" id="pageSize">
+                </div>
+                <div class="form-group">
+                    <button type="button" id="btnSubmit" class="btn btn-primary">Submit</button>
                 </div>
             </form>
 
