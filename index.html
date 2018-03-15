@@ -31,11 +31,54 @@
     }
 
     #output_image {
+        position: absolute;
+        /*border: 3px solid black;*/
+    }
+
+    .greyScale {
+        filter: grayscale(100%);
+    }
+
+    .hiddenImage {
+        display: none;
+    }
+
+    .A4-portriat {
+        position: relative;
+
+        width: 250px;
+        height: 437px;
+        margin-left: 25%;
+        margin-top: 5%;
+    }
+
+    .A4-landscape {
+        position: relative;
+        /*width: 766px;*/
+        /*height: 556px;*/
         width: 766px;
-        height: 556px;
-        margin-left: 13%;
-        margin-top: 2%;
-        border: 3px solid black;
+        height: 456px;
+        margin-left: 10%;
+        margin-top: 5%;
+    }
+
+    .A3-portriat {
+        position: relative;
+
+        width: 325px;
+        height: 540px;
+        margin-left: 25%;
+        margin-top: 1%;
+    }
+
+    .A3-landscape {
+        position: relative;
+        /*width: 766px;*/
+        /*height: 556px;*/
+        width: 766px;
+        height: 456px;
+        margin-left: 10%;
+        margin-top: 3%;
     }
 
 </style>
@@ -80,7 +123,7 @@
         </div>
     </div>
     <div class="w3-half w3-container" id="right-div"><br>
-        <img id="output_image"/>
+        <img id="output_image" class="hiddenImage"/>
     </div>
 </div>
 
