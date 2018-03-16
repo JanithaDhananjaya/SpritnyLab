@@ -14,7 +14,6 @@
         padding-right: 40px;
         padding-top: 5px;
         padding-bottom: 5px;
-        margin: 0;
         display: inline;
         background-color: #CD853F;
     }
@@ -43,42 +42,70 @@
         display: none;
     }
 
+    #btnSubmit{
+        margin-left:28%;
+    }
+
     .A4-portriat {
         position: relative;
 
-        width: 250px;
-        height: 437px;
+        /*width: 250px;*/
+        /*height: 437px;*/
+
+        width: 297.5px;
+        height: 421px;
         margin-left: 25%;
         margin-top: 5%;
     }
 
     .A4-landscape {
         position: relative;
-        /*width: 766px;*/
-        /*height: 556px;*/
-        width: 766px;
-        height: 456px;
-        margin-left: 10%;
-        margin-top: 5%;
+        /*width: 594px;*/
+        /*height: 351px;*/
+        width: 421px;
+        height: 297.5px;
+        margin-left: 21%;
+        margin-top: 8%;
     }
 
     .A3-portriat {
         position: relative;
 
-        width: 325px;
-        height: 540px;
-        margin-left: 25%;
-        margin-top: 1%;
+        /*width: 325px;*/
+        /*height: 540px;*/
+
+        width: 421px;
+        height: 585.5px;
+        margin-left: 22%;
+        margin-top: 0%;
     }
 
     .A3-landscape {
         position: relative;
+
         /*width: 766px;*/
-        /*height: 556px;*/
-        width: 766px;
-        height: 456px;
-        margin-left: 10%;
-        margin-top: 3%;
+        /*height: 456px;*/
+        width: 585.5px;
+        height: 421px;
+        margin-left: 15%;
+        margin-top: 6%;
+    }
+
+    .A2-portriat {
+        position: relative;
+        width: 585.5px;
+        height: 792px;
+        margin-left: 22%;
+        margin-top: 0%;
+    }
+
+    .A2-landscape {
+        position: relative;
+
+        width: 792px;
+        height: 525.5px;
+        margin-left: 8%;
+        margin-top: 1%;
     }
 
 </style>
@@ -101,7 +128,7 @@
 
                 <div class="form-group">
                     <label for="pages">Pages per Sheet:</label>
-                    <input type="text" class="form-control col-sm-4" id="pages">
+                    <input type="text" class="form-control col-4" id="pages">
                 </div>
                 <div class="form-group">
                     <label for="colour">Black & White/Colour:</label>
@@ -116,7 +143,10 @@
                     <input type="text" class="form-control col-sm-4" id="pageSize">
                 </div>
                 <div class="form-group">
-                    <button type="button" id="btnSubmit" class="btn btn-primary">Submit</button>
+                    <!--<button type="button" id="btnSubmit" class="btn btn-primary">Submit</button>-->
+                    <button type="button" id="btnSubmit" style="background-color: #d0dbdd; border-color:transparent;">
+                        <img src="Images/Printer.png"/><br> Print
+                    </button>
                 </div>
             </form>
 

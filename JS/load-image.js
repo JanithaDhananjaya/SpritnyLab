@@ -37,7 +37,10 @@ $(document).ready(function () {
                 $('#output_image').removeClass('A3-portriat');
                 $('#output_image').removeClass('A3-landscape');
                 $('#output_image').removeClass('A4-portriat');
+                $('#output_image').removeClass('A2-portriat');
+                $('#output_image').removeClass('A2-landscape');
                 $('#output_image').addClass('A4-landscape');
+                $('#right-div').css("height", "630px");
                 // $('#output_image').css("width", "766px", "height", "556px");
                 // $('#output_image').css("margin-left", "13%", "margin-top", "80%");
             });
@@ -50,7 +53,10 @@ $(document).ready(function () {
                 $('#output_image').removeClass('A3-portriat');
                 $('#output_image').removeClass('A3-landscape');
                 $('#output_image').removeClass('A4-portriat');
+                $('#output_image').removeClass('A2-portriat');
+                $('#output_image').removeClass('A2-landscape');
                 $('#output_image').addClass('A4-landscape');
+                $('#right-div').css("height", "630px");
                 // $('#output_image').css("width", "766px", "height", "556px");
                 // $('#output_image').css("margin-left", "13%", "margin-top", "80%");
             });
@@ -63,7 +69,10 @@ $(document).ready(function () {
                 $('#output_image').removeClass('A3-portriat');
                 $('#output_image').removeClass('A3-landscape');
                 $('#output_image').removeClass('A4-landscape');
+                $('#output_image').removeClass('A2-portriat');
+                $('#output_image').removeClass('A2-landscape');
                 $('#output_image').addClass('A4-portriat');
+                $('#right-div').css("height", "630px");
                 // $('#output_image').css("height", "550px", "width", "339px");
                 // $('#output_image').css("margin-left", "25%", "margin-top", "5%");
             });
@@ -75,8 +84,10 @@ $(document).ready(function () {
                 $('#output_image').removeClass('A3-portriat');
                 $('#output_image').removeClass('A3-landscape');
                 $('#output_image').removeClass('A4-landscape');
+                $('#output_image').removeClass('A2-portriat');
+                $('#output_image').removeClass('A2-landscape');
                 $('#output_image').addClass('A4-portriat');
-
+                $('#right-div').css("height", "630px");
                 // $('#output_image').css("height", "550px", "width", "339px");
                 // $('#output_image').css("margin-left", "25%", "margin-top", "5%");
             });
@@ -88,7 +99,10 @@ $(document).ready(function () {
                 $('#output_image').removeClass('A4-portriat');
                 $('#output_image').removeClass('A4-landscape');
                 $('#output_image').removeClass('A3-portriat');
+                $('#output_image').removeClass('A2-portriat');
+                $('#output_image').removeClass('A2-landscape');
                 $('#output_image').addClass('A3-landscape');
+                $('#right-div').css("height", "630px");
                 // $('#output_image').css("width", "766px", "height", "556px");
                 // $('#output_image').css("margin-left", "13%", "margin-top", "80%");
             });
@@ -101,7 +115,10 @@ $(document).ready(function () {
                 $('#output_image').removeClass('A4-portriat');
                 $('#output_image').removeClass('A4-landscape');
                 $('#output_image').removeClass('A3-portriat');
+                $('#output_image').removeClass('A2-portriat');
+                $('#output_image').removeClass('A2-landscape');
                 $('#output_image').addClass('A3-landscape');
+                $('#right-div').css("height", "630px");
                 // $('#output_image').css("width", "766px", "height", "556px");
                 // $('#output_image').css("margin-left", "13%", "margin-top", "80%");
             });
@@ -114,7 +131,10 @@ $(document).ready(function () {
                 $('#output_image').removeClass('A4-portriat');
                 $('#output_image').removeClass('A4-landscape');
                 $('#output_image').removeClass('A3-landscape');
+                $('#output_image').removeClass('A2-portriat');
+                $('#output_image').removeClass('A2-landscape');
                 $('#output_image').addClass('A3-portriat');
+                $('#right-div').css("height", "630px");
                 // $('#output_image').css("height", "550px", "width", "339px");
                 // $('#output_image').css("margin-left", "25%", "margin-top", "5%");
             });
@@ -126,8 +146,70 @@ $(document).ready(function () {
                 $('#output_image').removeClass('A4-portriat');
                 $('#output_image').removeClass('A4-landscape');
                 $('#output_image').removeClass('A3-landscape');
+                $('#output_image').removeClass('A2-portriat');
+                $('#output_image').removeClass('A2-landscape');
                 $('#output_image').addClass('A3-portriat');
+                $('#right-div').css("height", "630px");
+                // $('#output_image').css("height", "550px", "width", "339px");
+                // $('#output_image').css("margin-left", "25%", "margin-top", "5%");
+            });
+        } else if (pageSize == 'A2' && orientation == 'landscape' && colour == 'c') {
+            console.log("This is a landscape image");
+            $('#output_image').ready(function () {
+                $('#output_image').removeClass('hiddenImage');
+                $('#output_image').removeClass('greyScale');
+                $('#output_image').removeClass('A4-portriat');
+                $('#output_image').removeClass('A4-landscape');
+                $('#output_image').removeClass('A3-portriat');
+                $('#output_image').removeClass('A2-portriat');
+                $('#output_image').removeClass('A2-landscape');
+                $('#output_image').addClass('A2-landscape');
+                $('#right-div').css("hight", "810px");
 
+                // $('#output_image').css("margin-left", "13%", "margin-top", "80%");
+            });
+
+        } else if (pageSize == 'A2' && orientation == 'landscape' && colour == 'b') {
+            console.log("This is a landscape image");
+            $('#output_image').ready(function () {
+                $('#output_image').removeClass('hiddenImage');
+                $('#output_image').addClass('greyScale');
+                $('#output_image').removeClass('A4-portriat');
+                $('#output_image').removeClass('A4-landscape');
+                $('#output_image').removeClass('A3-portriat');
+                $('#output_image').removeClass('A2-portriat');
+                $('#output_image').removeClass('A2-landscape');
+                $('#output_image').addClass('A2-landscape');
+                // $('#right-div').css("width", "810px");
+                // $('#output_image').css("margin-left", "13%", "margin-top", "80%");
+            });
+
+        } else if (pageSize == 'A2' && orientation == 'portrait' && colour == 'c') {
+            console.log("This is a portrait image");
+            $('#output_image').ready(function () {
+                $('#output_image').removeClass('hiddenImage');
+                $('#output_image').removeClass('greyScale');
+                $('#output_image').removeClass('A4-portriat');
+                $('#output_image').removeClass('A4-landscape');
+                $('#output_image').removeClass('A3-landscape');
+                $('#output_image').removeClass('A2-portriat');
+                $('#output_image').removeClass('A2-landscape');
+                $('#output_image').addClass('A2-portriat');
+                $('#right-div').css("height", "850px");
+                // $('#output_image').css("margin-left", "25%", "margin-top", "5%");
+            });
+        } else if (pageSize == 'A2' && orientation == 'portrait' && colour == 'b') {
+            console.log("This is a portrait image");
+            $('#output_image').ready(function () {
+                $('#output_image').removeClass('hiddenImage');
+                $('#output_image').addClass('greyScale');
+                $('#output_image').removeClass('A4-portriat');
+                $('#output_image').removeClass('A4-landscape');
+                $('#output_image').removeClass('A3-landscape');
+                $('#output_image').removeClass('A2-portriat');
+                $('#output_image').removeClass('A2-landscape');
+                $('#output_image').addClass('A2-portriat');
+                $('#right-div').css("height", "850px");
                 // $('#output_image').css("height", "550px", "width", "339px");
                 // $('#output_image').css("margin-left", "25%", "margin-top", "5%");
             });
